@@ -1,0 +1,18 @@
+conda activate automate-env-clean
+from automata.fa.dfa import DFA
+
+
+# d : automate des mots sur {a,b} dont le nombre de a est multiple de 3
+d = DFA(
+    states={"0", "1", "2"}, input_symbols={"a", "b"},
+    transitions={
+    "0": {"a": "1", "b": "0"},
+        "1": {"a": "2", "b": "1"},
+        "2": {"a": "0", "b": "2"},
+    },
+    initial_state="0", final_states={"0"},
+)
+
+
+from automata.fa.dfa import DFA
+d.show_diagram()
